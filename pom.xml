@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>com.north814.cyllene</groupId>
+  <groupId>com.north.cyllene</groupId>
   <artifactId>cyllenewebui</artifactId>
   
   <packaging>war</packaging>
@@ -21,15 +21,14 @@
               <target>1.8</target>
           </configuration>
       </plugin>
-      <!--
       <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-clean-plugin</artifactId>
-            <version>2.4.1</version>
+            <version>3.2.0</version>
             <configuration>
                 <filesets>
                     <fileset>
-                        <directory>C:\dev\tools\tomcat8\webapps\</directory>
+                        <directory>${project.basedir}/docker</directory>
                         <includes>
                               <include>cyllenewebui.war</include>
                         </includes>
@@ -38,15 +37,41 @@
                 </filesets>
             </configuration>
       </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<warName>cyllenewebui</warName>
-					<outputDirectory>C:\dev\tools\tomcat8\webapps\</outputDirectory>
-				</configuration>
-			</plugin>
+     <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version> <!-- Use the appropriate version -->
+          <configuration>
+              <outputDirectory>${project.basedir}/docker</outputDirectory>
+              <warName>cyllenewebui</warName>
+          </configuration>
+      </plugin>
+      <!--
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.2.0</version>
+            <configuration>
+                <filesets>
+                    <fileset>
+                        <directory>${project.basedir}/docker</directory>
+                        <includes>
+                              <include>cyllenewebui.war</include>
+                        </includes>
+                        <followSymlinks>false</followSymlinks>
+                    </fileset>
+                </filesets>
+            </configuration>
+      </plugin>
+     <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version>
+          <configuration>
+              <outputDirectory>${project.basedir}/docker</outputDirectory>
+              <warName>cyllenewebui</warName>
+          </configuration>
+      </plugin>
       -->
 		</plugins>
   </build>
