@@ -30,33 +30,7 @@
                     <fileset>
                         <directory>${project.basedir}/docker</directory>
                         <includes>
-                              <include>cyllenewebui.war</include>
-                        </includes>
-                        <followSymlinks>false</followSymlinks>
-                    </fileset>
-                </filesets>
-            </configuration>
-      </plugin>
-     <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.3.2</version> <!-- Use the appropriate version -->
-          <configuration>
-              <outputDirectory>${project.basedir}/docker</outputDirectory>
-              <warName>cyllenewebui</warName>
-          </configuration>
-      </plugin>
-      <!--
-      <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-clean-plugin</artifactId>
-            <version>3.2.0</version>
-            <configuration>
-                <filesets>
-                    <fileset>
-                        <directory>${project.basedir}/docker</directory>
-                        <includes>
-                              <include>cyllenewebui.war</include>
+                              <include>ROOT.war</include>
                         </includes>
                         <followSymlinks>false</followSymlinks>
                     </fileset>
@@ -69,7 +43,33 @@
           <version>3.3.2</version>
           <configuration>
               <outputDirectory>${project.basedir}/docker</outputDirectory>
-              <warName>cyllenewebui</warName>
+              <warName>ROOT</warName>
+          </configuration>
+      </plugin>
+      <!--
+      <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.2.0</version>
+            <configuration>
+                <filesets>
+                    <fileset>
+                        <directory>${project.basedir}/docker</directory>
+                        <includes>
+                              <include>ROOT.war</include>
+                        </includes>
+                        <followSymlinks>false</followSymlinks>
+                    </fileset>
+                </filesets>
+            </configuration>
+      </plugin>
+     <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.3.2</version>
+          <configuration>
+              <outputDirectory>${project.basedir}/docker</outputDirectory>
+              <warName>ROOT</warName>
           </configuration>
       </plugin>
       -->
